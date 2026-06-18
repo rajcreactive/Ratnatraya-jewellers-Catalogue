@@ -1,0 +1,291 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Ratna-Traya Jewellers</title>
+
+<link rel="stylesheet" href="Catalogue_V21.css">
+
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Montserrat:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+</head>
+
+<body>
+
+<!-- HEADER -->
+
+<header class="luxury-header">
+
+    <div class="topbar">
+
+        <img
+            src="assets/logo.png"
+            class="brand-logo"
+            alt="Ratna-Traya Jewellers">
+
+        <div class="brand-text">
+
+            <h1>Ratna-Traya Jewellers</h1>
+
+            <p>Purity • Radiance • Elegance</p>
+
+        </div>
+
+    </div>
+
+</header>
+
+<!-- HERO -->
+
+<section class="hero-section">
+
+    <div class="hero-overlay">
+
+        <h2>Timeless Jewellery Collections</h2>
+
+        <p>
+            Discover handcrafted diamond and gold jewellery
+            designed with elegance, purity and brilliance.
+        </p>
+
+        <a
+            href="#productGrid"
+            class="hero-button">
+
+            Explore Collection
+
+        </a>
+
+    </div>
+
+</section>
+
+<!-- FILTERS -->
+
+<section class="filters">
+
+    <div class="filter-bar">
+
+        <input
+            type="text"
+            id="searchBox"
+            placeholder="Search Jewellery">
+
+        <button
+            id="searchButton"
+            class="search-btn">
+
+            Search
+
+        </button>
+
+        <select id="categoryFilter">
+
+            <option value="">
+                All Collections
+            </option>
+
+        </select>
+
+    </div>
+
+</section>
+
+<!-- CATEGORY CARDS -->
+
+<section class="category-section">
+
+    <h2 class="section-title">
+        Browse Categories
+    </h2>
+
+    <div
+        id="categoryCards"
+        class="category-cards">
+
+    </div>
+
+</section>
+
+<!-- FEATURED COLLECTION -->
+
+<section class="featured-section">
+
+    <h2 class="section-title">
+        Featured Collection
+    </h2>
+
+    <div
+        id="featuredGrid"
+        class="featured-grid">
+
+    </div>
+
+</section>
+
+<!-- PRODUCT COLLECTION -->
+
+<section>
+
+    <h2 class="section-title">
+        Jewellery Collection
+    </h2>
+
+    <div
+        id="productCount"
+        class="product-count">
+
+        Loading Products...
+
+    </div>
+
+    <div
+        id="productGrid"
+        class="product-grid">
+
+    </div>
+
+</section>
+
+<!-- PRODUCT MODAL -->
+
+<div
+    id="productModal"
+    class="modal">
+
+    <div class="modal-content">
+
+        <span
+            class="close-modal"
+            onclick="closeProductModal()">
+
+            &times;
+
+        </span>
+
+        <div class="modal-layout">
+
+            <div class="modal-images">
+
+                <img
+                    id="modalMainImage"
+                    class="modal-main-image"
+                    src=""
+                    alt="Product">
+
+                <div
+                    id="thumbnailContainer"
+                    class="thumbnail-container">
+
+                </div>
+
+            </div>
+
+            <div class="modal-details">
+
+                <h2 id="modalTitle"></h2>
+
+                <p>
+                    Product Code:
+                    <strong id="modalCode"></strong>
+                </p>
+
+                <p>
+                    Category:
+                    <strong id="modalCategory"></strong>
+                </p>
+
+                <div id="modalFeatured"></div>
+
+                <div class="modal-buttons">
+
+                    <a
+                        id="whatsappButton"
+                        class="whatsapp-btn"
+                        target="_blank">
+
+                        Enquire on WhatsApp
+
+                    </a>
+
+                    <button
+                        id="shareButton"
+                        class="share-btn"
+                        type="button">
+
+                        Share Product
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+        <div class="related-section">
+
+            <h3>
+                You May Also Like
+            </h3>
+
+            <div
+                id="relatedProducts"
+                class="related-products">
+
+            </div>
+
+        </div>
+
+    </div>
+
+</div>
+
+<!-- BACK TO TOP -->
+
+<button
+    id="backToTop"
+    class="back-to-top"
+    onclick="window.scrollTo({top:0,behavior:'smooth'})">
+
+    ↑
+
+</button>
+
+<!-- FLOATING WHATSAPP -->
+
+<a
+    href="https://wa.me/918905650030"
+    target="_blank"
+    class="floating-whatsapp">
+
+    💬
+
+</a>
+
+<!-- FOOTER -->
+
+<footer class="luxury-footer">
+
+    <h3>
+        Ratna-Traya Jewellers
+    </h3>
+
+    <p>
+        Purity • Radiance • Elegance
+    </p>
+
+    <p>
+        WhatsApp: +91 89056 50030
+    </p>
+
+</footer>
+
+<script src="Catalogue_V21.js"></script>
+
+</body>
+</html>
