@@ -70,7 +70,7 @@ HERO
         rgba(0,0,0,.45),
         rgba(0,0,0,.45)
     ),
-    url("assets/hero-banner.jpg");
+    url("assets/hero-banner.png");
 
     background-size:cover;
     background-position:center;
