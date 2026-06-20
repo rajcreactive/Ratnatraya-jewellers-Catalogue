@@ -490,20 +490,49 @@ function shareCurrentProduct() {
         return;
     }
 
+    const productUrl =
+        window.location.href;
+
     const text =
 `✨ Ratna Traya Jewellers
 
-${currentProduct.name}
+${currentProduct.name || ""}
 
-Product Code: ${currentProduct.code}
+Product Code: ${currentProduct.id || ""}
 
-Category: ${currentProduct.category}
+Category: ${currentProduct.category || ""}
 
 View Catalogue:
-${window.location.href}`;
+${productUrl}`;
 
-    const whatsappUrl =
-        `https://wa.me/?text=${encodeURIComponent(text)}`;
+    if (navigator.share) {
 
-    window.open(whatsappUrl, "_blank");
+        navigator.share({
+            title: currentProduct.name,
+            text: text,
+            url: productUrl
+        });
+
+    } else {
+
+        navigator.clipboard.writeText(text);
+
+        alert(
+            "Product details copied to clipboard."
+        );
+    }
 }
+
+document.addEventListener(
+    "click",
+    function(event) {
+
+        if (
+            event.target &&
+            event.target.id === "shareButton"
+        ) {
+
+            shareCurrentProduct();
+        }
+    }
+);
