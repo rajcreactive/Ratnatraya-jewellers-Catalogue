@@ -511,7 +511,7 @@ ${productUrl}`;
             title: currentProduct.name,
             text: text,
             url: productUrl
-        });
+        }).catch(() => {});
 
     } else {
 
