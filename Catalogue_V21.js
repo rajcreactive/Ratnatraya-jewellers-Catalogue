@@ -482,3 +482,28 @@ document.addEventListener(
 );
 
 loadProducts();
+
+function shareCurrentProduct() {
+
+    if (!currentProduct) {
+        alert("No product selected");
+        return;
+    }
+
+    const text =
+`✨ Ratna Traya Jewellers
+
+${currentProduct.name}
+
+Product Code: ${currentProduct.code}
+
+Category: ${currentProduct.category}
+
+View Catalogue:
+${window.location.href}`;
+
+    const whatsappUrl =
+        `https://wa.me/?text=${encodeURIComponent(text)}`;
+
+    window.open(whatsappUrl, "_blank");
+}
