@@ -1,1 +1,224 @@
-<h1>ADMIN TEST WORKING</h1>
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>RTJ Catalogue 2.0 Admin</title>
+
+<link rel="stylesheet" href="admin_V19.css">
+
+</head>
+
+<body>
+
+<div class="sidebar">
+
+    <h2>RTJ Admin</h2>
+
+    <button type="button">Dashboard</button>
+    <button type="button">Products</button>
+    <button type="button">Categories</button>
+    <button type="button">Settings</button>
+
+    <button
+        type="button"
+        onclick="exportCatalogue()">
+        Export Catalogue
+    </button>
+
+</div>
+
+<div class="main">
+
+    <h1>Ratna-Traya Jewellers</h1>
+
+    <div class="cards">
+
+        <div class="card">
+            <h3>Total Products</h3>
+            <p id="totalProducts">0</p>
+        </div>
+
+        <div class="card">
+            <h3>Categories</h3>
+            <p>0</p>
+        </div>
+
+        <div class="card">
+            <h3>Featured Products</h3>
+            <p>0</p>
+        </div>
+
+    </div>
+
+    <hr>
+
+    <h2>Category Analytics</h2>
+
+    <div
+        id="categoryAnalytics"
+        class="analytics-grid">
+    </div>
+
+    <hr>
+
+    <h2>Edit Product</h2>
+
+    <div class="form-box">
+
+        <input
+            type="text"
+            id="productCode"
+            placeholder="Product Code"
+            readonly>
+
+        <input
+            type="text"
+            id="productName"
+            placeholder="Product Name">
+
+        <input
+            type="text"
+            id="productImage"
+            placeholder="Main Image">
+
+        <label class="checkbox-label">
+
+            <input
+                type="checkbox"
+                id="featured">
+
+            Featured Product
+
+        </label>
+
+        <select id="productCategory"></select>
+
+        <button
+            type="button"
+            onclick="saveProduct()">
+            Save Product
+        </button>
+
+    </div>
+
+    <div class="preview-wrapper">
+
+        <h3>Image Preview</h3>
+
+        <img
+            id="imagePreview"
+            class="image-preview"
+            src=""
+            alt="Product Preview">
+
+    </div>
+
+    <hr>
+
+    <h2>Category Manager</h2>
+
+    <table>
+
+        <thead>
+            <tr>
+                <th>Category Name</th>
+                <th>Status</th>
+            </tr>
+        </thead>
+
+        <tbody id="categoryTable"></tbody>
+
+    </table>
+
+    <br>
+
+    <h2>Product List</h2>
+
+    <div class="stats-bar">
+
+        <div class="stat-box">
+            <span>Total</span>
+            <strong id="statTotal">0</strong>
+        </div>
+
+        <div class="stat-box">
+            <span>Showing</span>
+            <strong id="statShowing">0</strong>
+        </div>
+
+        <div class="stat-box">
+            <span>Category</span>
+            <strong id="statCategory">All</strong>
+        </div>
+
+        <div class="stat-box">
+            <span>Featured</span>
+            <strong id="statFeatured">0</strong>
+        </div>
+
+            <div class="stat-box">
+                <span>Missing Images</span>
+                <strong id="statMissingImages">0</strong>
+            </div>
+
+            <div class="stat-box">
+                <span>Missing Categories</span>
+                <strong id="statMissingCategories">0</strong>
+            </div>
+
+            <div class="stat-box">
+                <span>Missing Names</span>
+                <strong id="statMissingNames">0</strong>
+            </div>
+
+    </div>
+
+    <div class="form-box">
+
+        <input
+            type="text"
+            id="searchBox"
+            placeholder="Search Product..."
+            onkeyup="renderProducts()">
+
+        <select
+            id="categoryFilter"
+            onchange="renderProducts()">
+
+            <option value="">
+                All Categories
+            </option>
+
+        </select>
+
+    </div>
+
+    <table>
+
+        <thead>
+
+            <tr>
+                <th>Image</th>
+                <th>Code</th>
+                <th>Name</th>
+                <th>Category</th>
+                <th>Featured</th>
+                <th>Action</th>
+            </tr>
+
+        </thead>
+
+        <tbody id="productTable"></tbody>
+
+    </table>
+
+</div>
+
+<script src="admin_V19.js"></script>
+
+</body>
+</html>
